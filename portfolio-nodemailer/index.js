@@ -7,17 +7,16 @@ const cors = require('cors')
 const app = exprees()
 const PORT = process.env.PORT || 4000
 
+
+// use cors setup
 app.use(cors())
 
 // midleware setup
 app.use(exprees.json())
 
 
-
-
-
 app.get('/',(req,res)=>{
-  res.send('send')  
+  res.send('send workking fine')  
 })
 
 
