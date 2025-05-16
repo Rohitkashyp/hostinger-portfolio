@@ -3,7 +3,7 @@ import React, { useState,useEffect } from 'react'
 import axios from "axios"
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// const API_URL= import.meta.env.VITE_EMAIL;
+const API_URL= import.meta.env.VITE_EMAIL;
 
 
 
@@ -92,7 +92,7 @@ const inputvalidater = (name,value)=>{
      if(submitvalidater()){
       try {
         
-         const res = await axios.post(`http://localhost:4000/user_info`,userinfo)
+         const res = await axios.post(`${API_URL}/user_info`,userinfo)
          if(res.status === 200){
          console.log(res.data)
          // alert("form submit sucessfully")
