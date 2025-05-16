@@ -1,3 +1,4 @@
+
 require("dotenv").config()
 const exprees = require('express')
 const nodemailer = require('nodemailer')
@@ -6,9 +7,12 @@ const cors = require('cors')
 const app = exprees()
 const PORT = process.env.PORT || 4000
 
+app.use(cors())
+
 // midleware setup
 app.use(exprees.json())
-app.use(cors())
+
+
 
 
 
@@ -30,7 +34,7 @@ app.post('/user_info', async(req,res)=>{
    })
 
    const mailOptions = {
-    from: `${name} <${process.env.USER}/>`,
+    from: `${name} <${process.env.USER}>`,
     to: process.env.USER,
     subject: "New Message Recevied",
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
